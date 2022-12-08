@@ -27,20 +27,23 @@ public class LoadController {
 
     // Add a load
     @PostMapping("/load")
-    public Load addLoad(@RequestBody Load load) {
-        return this.loadService.addLoad(load);
+    public String addLoad(@RequestBody Load load) {
+        this.loadService.addLoad(load);
+        return "Load added successfully";
     }
 
     // Update a load
-    @PutMapping("/load")
-    public Load updateLoad(@RequestBody Load load) {
-        return this.loadService.updateLoad(load);
+    @PutMapping("/load/{id}")
+    public String updateLoad(@RequestBody Load load, @PathVariable long id) {
+        this.loadService.updateLoad(load,id);
+        return "Load updated successfully";
     }
 
     // Delete a load
     @DeleteMapping("/load/{id}")
-    public Load deleteLoad(@PathVariable long id) {
-        return this.loadService.deleteLoad(id);
+    public String deleteLoad(@PathVariable long id) {
+        this.loadService.deleteLoad(id);
+        return "Load deleted successfully";
     }
 
 

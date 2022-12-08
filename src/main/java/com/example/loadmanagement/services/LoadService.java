@@ -15,7 +15,7 @@ public interface LoadService {
     Load addLoad(Load load);
 
     // Update a load
-    Load updateLoad(Load load);
+    Load updateLoad(Load load,long id);
 
     // Delete a load
     Load deleteLoad(long id);
